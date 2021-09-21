@@ -1,6 +1,6 @@
 export interface Content {
   id: number;
-  author:string;
+  author: string;
   imgUrl?: string;
   type?: string;
   title: string;
