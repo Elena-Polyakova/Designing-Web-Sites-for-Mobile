@@ -1,17 +1,14 @@
-<p>content-card works!</p>
+<!--<p>content-card works!</p>-->
+<div class="box">
+  <p><strong>ID: {{ content.id }}.</strong></p>
+  <p><strong>Author:</strong> {{ content.author }}</p>
+  <p><strong>Title:</strong> {{ content.title }}</p>
+  <p><strong>Description:</strong> {{ content.body }}</p>
+  <p><strong>Type:</strong> {{ content.type }}</p>
+  <p><strong>Tags:</strong> {{ content.tags }}</p>
+  <img class="images" [src]="content.imgUrl">
+</div>
 
-<p><strong>ID: </strong>{{ anotherContent.getContent[0].id}}
-  <strong> . Author: </strong>{{ anotherContent.getContent[0].author}}
-  <strong> . Title: </strong> {{ anotherContent.getContent[0].title}}
-  <strong> . Body: </strong>{{ anotherContent.getContent[0].body}}</p>
 
-<p><strong>ID: </strong>{{ anotherContent.getContent[1].id}}
-  <strong> . Author: </strong>{{ anotherContent.getContent[1].author}}
-  <strong> . Title: </strong> {{ anotherContent.getContent[1].title}}
-  <strong> . Body: </strong>{{ anotherContent.getContent[1].body}}</p>
 
-<p><strong>ID: </strong>{{ anotherContent.getContent[2].id}}
-  <strong> . Author: </strong>{{ anotherContent.getContent[2].author}}
-  <strong> . Title: </strong> {{ anotherContent.getContent[2].title}}
-  <strong> . Body: </strong>{{ anotherContent.getContent[2].body}}</p>
 

@@ -1,0 +1,13 @@
+.box{
+  display: block;
+  border: 3px solid olivedrab;
+  padding: 7px;
+  margin: 5px;
+  width: 300px;
+  height: auto;
+}
+.images{
+  height: 200px;
+  width: auto;
+}
+

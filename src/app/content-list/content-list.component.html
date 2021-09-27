@@ -1,1 +1,13 @@
-<p>content-list works!</p>
+<!--<p>content-list works!</p>-->
+<!--display 5 ContentCard's by passing in your Content array's values-->
+
+<app-content-card *ngFor="let item of newContent" [content]="item">
+<div class="box">
+  <p><strong>ID: {{ item.id }}.</strong></p>
+  <p><strong>ID: {{ item.author }}.</strong></p>
+  <p><strong>Type:</strong> {{ item.type }}</p>
+  <p><strong>Tags:</strong> {{ item.tags }}</p>
+  <img class="images" [src]="item.imgUrl">
+</div>
+</app-content-card>
+
