@@ -1,4 +1,4 @@
-.box{
+:host{
   display: block;
   border: 3px solid olivedrab;
   padding: 7px;
@@ -9,5 +9,8 @@
 .images{
   height: 200px;
   width: auto;
+}
+:host.is-last{
+  border: 2px solid black;
 }
 

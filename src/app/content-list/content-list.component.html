@@ -1,7 +1,7 @@
 <!--<p>content-list works!</p>-->
 <!--display 5 ContentCard's by passing in your Content array's values-->
-
-<app-content-card *ngFor="let item of newContent" [content]="item">
+<!--<script src="script.js"></script>-->
+<app-content-card *ngFor="let item of newContent; last as isLast" [content]="item" [class.is-last]="isLast">
 <div class="box">
   <p><strong>ID: {{ item.id }}.</strong></p>
   <p><strong>ID: {{ item.author }}.</strong></p>
@@ -10,4 +10,8 @@
   <img class="images" [src]="item.imgUrl">
 </div>
 </app-content-card>
+<script>
+  import {needClickImage} from "./src/assets/script.js";
 
+  needClickImage()
+</script>

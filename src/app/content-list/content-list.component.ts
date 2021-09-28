@@ -56,6 +56,7 @@ export class ContentListComponent implements OnInit {
       tags: ['pop', 'Wiz Khalifa', 'See You Again']
     }];
 
+
   constructor() { }
 
   ngOnInit(): void {
