@@ -13,4 +13,9 @@
 :host.is-last{
   border: 2px solid black;
 }
-
+:host.pop_items{
+  border: 5px solid purple;
+}
+:host.pop_fun{
+  border: 5px solid blue;
+}

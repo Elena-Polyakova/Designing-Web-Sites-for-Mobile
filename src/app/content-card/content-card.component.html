@@ -1,26 +1,13 @@
 <!--<p>content-card works!</p>-->
-<!--<script src="script.js"></script>-->
-<script>
-  // import {needClickImage} from "./src/assets/script.js";
-  // import {needClickImage} from 'src/app/content-card/content-card.component.ts';
-  // needClickImage()
-  import {showID} from "./content-card.component";
 
-  function needClickImage(){
-    let img = document.getElementById("img");
-    img?.addEventListener("click", showID);
-
-  }
-
-  </script>
 <div class="box">
   <p id="iD"><strong>ID: {{ content.id }}.</strong></p>
   <p><strong>Author:</strong> {{ content.author }}</p>
   <p><strong>Title:</strong> {{ content.title }}</p>
   <p><strong>Description:</strong> {{ content.body }}</p>
-  <p><strong>Type:</strong> {{ content.type }}</p>
-  <p><strong>Tags:</strong> {{ content.tags }}</p>
-  <img class="images" [src]="content.imgUrl" id="img" onclick="needClickImage()">
+  <p *ngIf = "content.type"><strong>Type:</strong> {{ content.type }}</p>
+  <p *ngIf = "content.tags"><strong>Tags:</strong> {{ content.tags }}</p>
+  <img class="images" [src]="content.imgUrl" id="img" (click)="showID()" *ngIf = "content.imgUrl">
 </div>
 
 

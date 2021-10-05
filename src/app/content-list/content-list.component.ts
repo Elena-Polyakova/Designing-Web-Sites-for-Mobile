@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-content-list',
@@ -8,8 +9,10 @@ import {Content} from "../helper-files/content-interface";
 })
 export class ContentListComponent implements OnInit {
 
+  public song_title: any;
+
     //add 5 items in array
-    newContent: Content[] = [
+    public newContent: Content[] = [
     {
       id: 1,
       author: 'Luis Fonsi',
@@ -32,7 +35,7 @@ export class ContentListComponent implements OnInit {
       id: 3,
       author: 'PSY',
       imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/PSY_EMTV_logo_27_%288198008711%29.jpg',
-      type: 'Pop',
+      type: 'Pop Fun',
       title: 'Gangnam Style',
       body: 'This is popular song.',
       tags: ['pop', 'PSY', 'Gangnam Style']
@@ -44,24 +47,34 @@ export class ContentListComponent implements OnInit {
       type: 'Pop',
       title: 'Uptown Funk ft. Bruno Mars',
       body: 'This is popular song.',
-      tags: ['pop', 'Mark Ronson', 'Uptown Funk']
-    },
+      },
     {
       id: 5,
       author: 'Wiz Khalifa',
-      imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Wiz_Khalifa_High_Road.jpg',
-      type: 'Pop',
+      // imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Wiz_Khalifa_High_Road.jpg',
+      type: 'Pop Fun',
       title: 'See You Again ft. Charlie Puth',
       body: 'This is popular song.',
       tags: ['pop', 'Wiz Khalifa', 'See You Again']
     }];
+  public item: any;
 
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
 
   }
+
+
+  putAlert(): void{
+    //display if song exists with user's title or not
+
+     console.log("Your search completed");
+    
+    }
 
 }
 

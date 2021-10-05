@@ -10,25 +10,19 @@ export class ContentCardComponent implements OnInit {
   @Input() content: any;
 
   constructor() {
-
+    this.content = {};
   }
 
   ngOnInit(): void {
 
   }
+  showID(): void {
 
-}
-export function showID(){
+    console.log(this.content.id);
 
-  let iD = document.getElementById("iD");
-  console.log("image clicked", iD);
-
+  }
 }
 
-// export function needClickImage(){
-//   let img = document.getElementById("img");
-//   img?.addEventListener("click", showID);
-//
-//    }
+
 
 

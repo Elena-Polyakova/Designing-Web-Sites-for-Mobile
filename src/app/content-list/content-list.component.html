@@ -1,17 +1,30 @@
 <!--<p>content-list works!</p>-->
 <!--display 5 ContentCard's by passing in your Content array's values-->
-<!--<script src="script.js"></script>-->
-<app-content-card *ngFor="let item of newContent; last as isLast" [content]="item" [class.is-last]="isLast">
-<div class="box">
-  <p><strong>ID: {{ item.id }}.</strong></p>
-  <p><strong>ID: {{ item.author }}.</strong></p>
-  <p><strong>Type:</strong> {{ item.type }}</p>
-  <p><strong>Tags:</strong> {{ item.tags }}</p>
-  <img class="images" [src]="item.imgUrl">
-</div>
-</app-content-card>
-<script>
-  import {needClickImage} from "./src/assets/script.js";
 
-  needClickImage()
-</script>
+<div class="user_input">
+  <h2>Enter a song title to search for: </h2>
+  <input #song_title>
+
+  <div>
+    <button (click)="putAlert()">Search</button>
+  </div>
+</div>
+<div>
+  <h3>
+    Your entered value:
+  </h3>
+  <h4>{{ song_title.value }}</h4>
+
+</div>
+
+<app-content-card *ngFor="let item of newContent | filterContent: 'Pop'"
+                  [content]="item" class="pop_items" >
+</app-content-card>
+
+<!--<app-content-card *ngFor="let item of newContent | filterContent: 'Pop Fun'; let item of newContent;-->
+<!--last as isLast" [content]="item" [class.is-last]="isLast">-->
+<!--</app-content-card>-->
+<app-content-card *ngFor="let item of newContent | filterContent: 'Pop Fun'"
+                  [content]="item" class="pop_fun">
+</app-content-card>
+
