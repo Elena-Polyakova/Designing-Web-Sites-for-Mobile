@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
+
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
@@ -8,7 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ContentCardComponent implements OnInit {
 
   @Input() content: any;
-
+  //@Input() titleToCheck: any;
   constructor() {
     this.content = {};
   }
@@ -17,9 +18,7 @@ export class ContentCardComponent implements OnInit {
 
   }
   showID(): void {
-
     console.log(this.content.id);
-
   }
 }
 

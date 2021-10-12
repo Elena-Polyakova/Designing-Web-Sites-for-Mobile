@@ -3,13 +3,19 @@
 <div class="box">
   <p id="iD"><strong>ID: {{ content.id }}.</strong></p>
   <p><strong>Author:</strong> {{ content.author }}</p>
-  <p><strong>Title:</strong> {{ content.title }}</p>
+  <p appHoverStyle><strong>Title: </strong>{{ content.title }}</p>
   <p><strong>Description:</strong> {{ content.body }}</p>
   <p *ngIf = "content.type"><strong>Type:</strong> {{ content.type }}</p>
-  <p *ngIf = "content.tags"><strong>Tags:</strong> {{ content.tags }}</p>
-  <img class="images" [src]="content.imgUrl" id="img" (click)="showID()" *ngIf = "content.imgUrl">
+  <div *ngIf = "content.tags">
+  <p><strong>Tags:</strong> </p><p *ngFor="let tag of content.tags" appHoverStyle fontWeight="bold" decoration="none">
+    {{ tag }}</p>
+  </div>
+  <div *ngIf = "content.imgUrl; else defaultShow">
+  <img class="images" [src]="content.imgUrl" id="img" (click)="showID()"/>
+  </div>
 </div>
 
-
-
+<ng-template #defaultShow>
+  <img class="images" [src]="'assets/default_image.jpg'" id="img" (click)="showID()"/>
+</ng-template>
 

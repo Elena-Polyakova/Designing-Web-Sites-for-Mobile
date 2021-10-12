@@ -9,8 +9,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ContentListComponent implements OnInit {
 
-  public song_title: any;
-
+    message = "";
     //add 5 items in array
     public newContent: Content[] = [
     {
@@ -20,7 +19,7 @@ export class ContentListComponent implements OnInit {
       type: 'Pop',
       title: 'Despacito ft. Daddy Yankee',
       body: 'This is popular song.',
-      tags: ['pop', 'Luis Fonsi', 'Despacito']
+      tags: ['Pop', 'Luis Fonsi', 'Despacito']
     },
     {
       id: 2,
@@ -29,7 +28,7 @@ export class ContentListComponent implements OnInit {
       type: 'Pop',
       title: 'Shape of You',
       body: 'This is popular song.',
-      tags: ['pop', 'Ed Sheeran', 'Shape of You']
+      tags: ['Pop', 'Ed Sheeran', 'Shape of You']
     },
     {
       id: 3,
@@ -38,7 +37,7 @@ export class ContentListComponent implements OnInit {
       type: 'Pop Fun',
       title: 'Gangnam Style',
       body: 'This is popular song.',
-      tags: ['pop', 'PSY', 'Gangnam Style']
+      tags: ['Pop', 'PSY', 'Gangnam Style']
     },
     {
       id: 4,
@@ -55,7 +54,7 @@ export class ContentListComponent implements OnInit {
       type: 'Pop Fun',
       title: 'See You Again ft. Charlie Puth',
       body: 'This is popular song.',
-      tags: ['pop', 'Wiz Khalifa', 'See You Again']
+      tags: ['Pop', 'Wiz Khalifa', 'See You Again']
     }];
   public item: any;
 
@@ -69,12 +68,40 @@ export class ContentListComponent implements OnInit {
   }
 
 
-  putAlert(): void{
+  putAlert(songVariable: string): void{
     //display if song exists with user's title or not
-
+    this.message = "";
      console.log("Your search completed");
-    
-    }
+     // this.newContent.forEach((eachContentItem) => {
+     //   if (songVariable == eachContentItem.title){
+     //     console.log("You found the song title in the song list!");
+     //     this.message = "Found the song!";
+     //     return;
+     //   }
+     //});
+    // if (this.message = '')
+    // {
+    //   this.message = "We didn't find it";
+    // }
+    //OR
+     for(let i = 0; i < this.newContent.length; i++){
+       if(this.newContent[i].title === songVariable){
+         this.message = "Song is found!";
+         break;
+       }
+     }
+     // let filter = this._newContent.filter(song => song.title == title);
+     // if(filter.length > 0) {
+     //   this.message = "Found";
+     // } else {
+     //    this.message = "Not found";
+     // }
+       // if (songVariable == this.newContent[i].title){
+       //
+       // }
 
 }
+    }
+
+
 
