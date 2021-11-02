@@ -1,23 +1,25 @@
 <!--<p>create-content works!</p>-->
-<div>
-  <h2>Enter item id: </h2><input #newId>
-  <h2>Enter item author: </h2><input #newAuthor>
-  <h2>Enter item's url for image: </h2><input #newImgUrl>
-  <h2>Enter item type: </h2><input #newType>
-  <h2>Enter item title: </h2><input #newTitle>
-  <h2>Enter item body: </h2><input #newBody>
-  <h2>Enter item tags: </h2><input #newTags>
+<div class="addingItems">
+  <h2>Enter song values to add it in the array</h2>
+  <h3>Enter song id: <input #newId></h3>
+  <h3>Enter song author: <input #newAuthor></h3>
+  <h3>Enter song's url for image: <input #newImgUrl></h3>
+  <h3>Enter song type: <input #newType></h3>
+  <h3>Enter song title: <input #newTitle></h3>
+  <h3>Enter song body: <input #newBody></h3>
+  <h3>Enter song tags: <input #newTags></h3>
   <div>
-    <button type=submit >Search</button>
+    <button type=submit (click)="addSong(newId.value, newAuthor.value, newImgUrl.value,
+    newType.value, newTitle.value, newBody.value, newTags.value)">Search</button>
   </div>
-
-  </div>
-  <div>
-    <h2>Entered item id: </h2>{{ newId.value }}
-    <h2>Entered item author: </h2>{{ newAuthor.value }}
-    <h2>Entered item's url for image: </h2>{{ newImgUrl.value }}
-    <h2>Entered item type: </h2>{{ newType.value }}
-    <h2>Entered item title: </h2>{{ newTitle.value }}
-    <h2>Entered item body: </h2>{{ newBody.value }}
-    <h2>Entered item tags: </h2>{{ newTags.value }}
 </div>
+<!--  </div>-->
+<!--  <div class="showingItems">-->
+<!--    <h3>Entered item id: {{ newId.value }}</h3>-->
+<!--    <h3>Entered item author: {{ newAuthor.value }}</h3>-->
+<!--    <h3>Entered item's url for image: {{ newImgUrl.value }}</h3>-->
+<!--    <h3>Entered item type: </h3>{{ newType.value }}-->
+<!--    <h3>Entered item title: </h3>{{ newTitle.value }}-->
+<!--    <h3>Entered item body: </h3>{{ newBody.value }}-->
+<!--    <h3>Entered item tags: </h3>{{ newTags.value }}-->
+<!--</div>-->

@@ -101,6 +101,12 @@ export class ContentListComponent implements OnInit {
        // }
 
 }
+  addSongToList(newBandFromChild: Content) {
+    this.newContent.push(newBandFromChild);
+    // We need to clone the array for the pipe to work
+    this.newContent = Object.assign([], this.newContent);
+
+  }
     }
 
 
