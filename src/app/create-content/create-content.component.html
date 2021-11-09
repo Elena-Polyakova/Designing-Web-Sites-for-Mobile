@@ -1,25 +1,35 @@
-<!--<p>create-content works!</p>-->
-<div class="addingItems">
-  <h2>Enter song values to add it in the array</h2>
-  <h3>Enter song id: <input #newId></h3>
-  <h3>Enter song author: <input #newAuthor></h3>
-  <h3>Enter song's url for image: <input #newImgUrl></h3>
-  <h3>Enter song type: <input #newType></h3>
-  <h3>Enter song title: <input #newTitle></h3>
-  <h3>Enter song body: <input #newBody></h3>
-  <h3>Enter song tags: <input #newTags></h3>
-  <div>
-    <button type=submit (click)="addSong(newId.value, newAuthor.value, newImgUrl.value,
-    newType.value, newTitle.value, newBody.value, newTags.value)">Search</button>
-  </div>
+<div>
+  <label for="id">ID*: </label><input id="id" [(ngModel)]="id">
+  <div style="clear: both;"></div>
 </div>
-<!--  </div>-->
-<!--  <div class="showingItems">-->
-<!--    <h3>Entered item id: {{ newId.value }}</h3>-->
-<!--    <h3>Entered item author: {{ newAuthor.value }}</h3>-->
-<!--    <h3>Entered item's url for image: {{ newImgUrl.value }}</h3>-->
-<!--    <h3>Entered item type: </h3>{{ newType.value }}-->
-<!--    <h3>Entered item title: </h3>{{ newTitle.value }}-->
-<!--    <h3>Entered item body: </h3>{{ newBody.value }}-->
-<!--    <h3>Entered item tags: </h3>{{ newTags.value }}-->
-<!--</div>-->
+<div>
+  <label for="author">Author*: </label><input id="author" [(ngModel)]="author">
+  <div style="clear: both;"></div>
+</div>
+<div>
+  <label for="imgUrl">Image URL:</label><input id="imgUrl" [(ngModel)]="imgUrl">
+  <div style="clear: both;"></div>
+</div>
+<div>
+  <label for="type">Type: </label><input id="type" [(ngModel)]="type">
+  <div style="clear: both;"></div>
+</div>
+<div>
+  <label for="title">Title*: </label><input id="title" [(ngModel)]="title">
+  <div style="clear: both;"></div>
+</div>
+<div>
+  <label for="body">Body*: </label><input id="body" [(ngModel)]="body">
+  <div style="clear: both;"></div>
+</div>
+<div>
+  <label for="tags">Tags: </label><input id="tags" [(ngModel)]="tags">
+  <div style="clear: both;"></div>
+</div>
+<div>
+  <button (click)="addContentPromise()">Add
+    Content</button>
+</div>
+<div class="error">
+  <div [innerHTML]="message"></div>
+</div>

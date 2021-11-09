@@ -8,6 +8,7 @@ import { FilterContentPipe } from './filter-content.pipe';
 import { HoverStyleDirective } from './hover-style.directive';
 import { ChangeBorderDirective } from './change-border.directive';
 import { CreateContentComponent } from './create-content/create-content.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,9 +20,10 @@ import { CreateContentComponent } from './create-content/create-content.componen
     ChangeBorderDirective,
     CreateContentComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
