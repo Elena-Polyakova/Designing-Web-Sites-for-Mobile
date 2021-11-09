@@ -1,0 +1,37 @@
+<!--<p>content-list works!</p>-->
+<app-create-content (newSongEvent)="addSongToList($event)">
+
+</app-create-content>
+<!--display 5 ContentCard's by passing in your Content array's values-->
+<form onSubmit="return false;">
+<div class="user_input">
+  <h2>Enter a song title to search for: </h2>
+<!--  template variable-->
+  <input #song_title>
+
+  <div>
+    <button type=submit (click)="putAlert(song_title.value)">Search</button>
+  </div>
+</div>
+</form>
+<div>
+  <h3>
+    Your entered value:
+  </h3>
+  <h4>{{ song_title.value }}</h4>
+  <h4>{{ message }}</h4>
+
+</div>
+<app-content-card  *ngFor="let item of newContent | filterContent: 'Pop';
+first as isFirst" [content]="item" class="pop_items" [class.highlight-me]="song_title.value == item.title" appChangeBorder
+                   [class.is-first]="isFirst" colourBorder='red'>
+</app-content-card>
+
+<!--<app-content-card *ngFor="let item of newContent | filterContent: 'Pop Fun'; let item of newContent;-->
+<!--last as isLast" [content]="item" [class.is-last]="isLast">-->
+<!--</app-content-card>-->
+<app-content-card appChangeBorder colourBorder="green" *ngFor="let item of newContent | filterContent: 'Pop Fun';
+last as Last" [content]="item" class="pop_fun"  [class.highlight-me]="song_title.value == item.title"
+                   [class.is-last]="Last">
+</app-content-card>
+

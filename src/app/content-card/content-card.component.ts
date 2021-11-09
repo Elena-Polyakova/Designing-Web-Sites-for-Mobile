@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import  { ContentList } from "../helper-files/content-list";
-import { Content } from "../helper-files/content-interface";
+import {Component, Input, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-content-card',
@@ -9,19 +8,20 @@ import { Content } from "../helper-files/content-interface";
 })
 export class ContentCardComponent implements OnInit {
 
-  //instance of your ContentList
-  anotherContent: ContentList = new ContentList;
-  constructor() { }
+  @Input() content: any;
+  //@Input() titleToCheck: any;
+  constructor() {
+    this.content = {};
+  }
 
   ngOnInit(): void {
 
-    let item: Content;
-
-    item = {id: 1, author: "Unknown", title: "The Novel", body: "This is the novel."};
-    this.anotherContent.add(item);
-    item = {id: 2, author: "Unknown", title: "Movie", body: "This is the movie."};
-    this.anotherContent.add(item);
-    item = {id: 3, author: "Unknown", title: "The cartoon", body: "This is the cartoon."};
-    this.anotherContent.add(item);
+  }
+  showID(): void {
+    console.log(this.content.id);
   }
 }
+
+
+
+

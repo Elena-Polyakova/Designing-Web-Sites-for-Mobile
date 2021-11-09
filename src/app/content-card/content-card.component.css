@@ -1,0 +1,25 @@
+:host{
+  display: block;
+  border: 3px solid olivedrab;
+  padding: 7px;
+  margin: 5px;
+  width: 300px;
+  height: auto;
+}
+.images{
+  height: 200px;
+  width: auto;
+}
+:host.is-last{
+  border: 2px solid black;
+}
+
+:host.pop_items{
+  border: 5px solid purple;
+}
+:host.pop_fun{
+  border: 5px solid blue;
+}
+:host.highlight-me{
+  background-color: greenyellow;
+}
