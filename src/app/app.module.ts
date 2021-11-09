@@ -7,6 +7,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { FilterContentPipe } from './filter-content.pipe';
 import { HoverStyleDirective } from './hover-style.directive';
 import { ChangeBorderDirective } from './change-border.directive';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ChangeBorderDirective } from './change-border.directive';
     ContentListComponent,
     FilterContentPipe,
     HoverStyleDirective,
-    ChangeBorderDirective
+    ChangeBorderDirective,
+    MessagesComponent
   ],
   imports: [
     BrowserModule
