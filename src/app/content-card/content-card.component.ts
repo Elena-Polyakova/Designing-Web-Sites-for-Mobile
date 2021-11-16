@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Content} from "../helper-files/content-interface";
 
 
 @Component({
@@ -9,6 +10,9 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ContentCardComponent implements OnInit {
 
   @Input() content: any;
+
+
+
   //@Input() titleToCheck: any;
   constructor() {
     this.content = {};
@@ -16,7 +20,9 @@ export class ContentCardComponent implements OnInit {
 
   ngOnInit(): void {
 
+
   }
+
   showID(): void {
     console.log(this.content.id);
   }

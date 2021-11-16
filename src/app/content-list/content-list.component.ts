@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
 import { Pipe, PipeTransform } from '@angular/core';
 import {ContentService} from "../services/content.service";
@@ -11,12 +11,11 @@ import {newContent} from "../helper-files/contentDb";
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent implements OnInit {
-
+    @Output() newSongEvent = new EventEmitter<Content>();
     message = "";
     selectedContent?: Content;
     newContent: Content[] = [];
-  public item: any;
-
+    public item: any;
 
   constructor(private contentService: ContentService, private messageService: MessageService) {
 
@@ -24,7 +23,7 @@ export class ContentListComponent implements OnInit {
 
   ngOnInit(): void {
     //this.newContent = this.contentService.getContent();
-    this.getNewContent();
+    this.contentService.getContentObs().subscribe(content => this.newContent = content);
   }
 
   onSelect(newContent: Content): void {
@@ -32,9 +31,6 @@ export class ContentListComponent implements OnInit {
     this.messageService.add(`Content retrieved!`);
   }
 
-  getNewContent(){
-    this.contentService.getContentObs().subscribe(content => this.newContent = content);
-  }
   putAlert(songVariable: string): void{
     //display if song exists with user's title or not
     this.message = "";
@@ -68,7 +64,8 @@ export class ContentListComponent implements OnInit {
        // }
 
 }
-    }
+
+}
 
 
 
